@@ -6,7 +6,7 @@
     "parser": "babel-eslint",
     "rules": {
         "no-new": 0,
-        "semi": 2,
+        "semi": [2, "always"],
         "indent": [2, 4]
     }
 }
