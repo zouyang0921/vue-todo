@@ -8,16 +8,30 @@ new Vue({
     //         <p>{{html}}</p>
     //     </div>`,
     template:
-        `<div :class="{active: isActive, red: !isActive}">
+        `<div
+            :class="{active: isActive, red: !isActive}"
+            :style="[styles, styles2]"
+        >
+            <p>{{getJoinedArr(arr)}}</p>
         </div>`,
     data: {
         aaa: 'main',
         html: '<span>123</span>',
-        isActive: false
+        isActive: false,
+        styles: {
+            color: 'red'
+        },
+        styles2: {
+            color: 'blue'
+        },
+        arr: [1, 2, 3]
     },
     methods: {
         handleClick() {
             alert('clicked'); // eslint-disable-line
+        },
+        getJoinedArr(arr) {
+            return arr.join(' ');
         }
     }
 });
