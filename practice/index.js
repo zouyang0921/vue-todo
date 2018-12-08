@@ -2,4 +2,5 @@
 // import './lifecycle';
 // import './data-binding';
 // import './directive';
-import './computed';
+// import './computed';
+import './component';
