@@ -44,19 +44,17 @@ if (isDev) {
             rules: [
                 {
                     test: /\.less/,
-                    use: ExtractPlugin.extract({
-                        fallback: 'style-loader',
-                        use: [
-                            'css-loader',
-                            {
-                                loader: 'postcss-loader',
-                                options: {
-                                    sourceMap: true
-                                }
-                            },
-                            'less-loader'
-                        ]
-                    })
+                    use: [
+                        'vue-style-loader',
+                        'css-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        },
+                        'less-loader'
+                    ]
                 }
             ]
         },
@@ -80,7 +78,7 @@ if (isDev) {
                 {
                     test: /\.less/,
                     use: ExtractPlugin.extract({
-                        fallback: 'style-loader',
+                        fallback: 'vue-style-loader',
                         use: [
                             'css-loader',
                             {

@@ -1,10 +1,6 @@
 import createApp from './create-app';
 
-const { app, router, store } = createApp();
-
-if (window.__INITIAL_STATE__) {
-    store.replaceState(window.__INITIAL_STATE__);
-}
+const { app, router } = createApp();
 
 router.onReady(() => {
     app.$mount('#root');

@@ -1,22 +1,21 @@
 <template>
     <div id="app">
-        <div id="cover"></div>
-        <Header></Header>
-        <todo></todo>
-        <Footer></Footer>
+        <div id="cover" />
+        <Header />
+        <router-link to="/login">login</router-link>
+        <router-view></router-view>
+        <Footer />
     </div>
 </template>
 
 <script>
-import Header from './todo/header.vue';
-import Footer from './todo/footer.jsx';
-import Todo from './todo/todo.vue';
+import Header from './layout/header.vue';
+import Footer from './layout/footer.vue';
 
 export default {
     components: {
         Header,
-        Footer,
-        Todo,
+        Footer
     }
 };
 </script>
@@ -35,8 +34,7 @@ export default {
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: #999;
-    opacity: .9;
+    background:rgba(0, 0, 0, .2);
     z-index: -1;
 }
 </style>

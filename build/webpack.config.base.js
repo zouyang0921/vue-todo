@@ -44,6 +44,13 @@ const config = {
                 ]
             }
         ]
+    },
+    resolve: {
+        alias: {
+            'components': path.join(__dirname, '../client/components'),
+            'layout': path.join(__dirname, '../client/layout'),
+            'views': path.join(__dirname, '../client/views')
+        }
     }
 }
 
