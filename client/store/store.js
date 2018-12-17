@@ -32,7 +32,7 @@ export default () => {
                 },
                 actions: {
                     add({ state, commit, rootState }) {
-                        commit('updateCount', { num1: 666 });
+                        commit('updateCount', { num1: 666 }, { root: true });
                     }
                 }
             },
@@ -49,6 +49,27 @@ export default () => {
             }
         }
     });
+
+    if (module.hot) {
+        module.hot.accept([
+            './state',
+            './mutations',
+            './actions',
+            './getters'
+        ], () => {
+            const newState = require('./state').default;
+            const newMutations = require('./mutations').default;
+            const newActions = require('./actions').default;
+            const newGetters = require('./getters').default;
+
+            store.hotUpdate({
+                state: newState,
+                mutations: newMutations,
+                actions: newActions,
+                getters: newGetters
+            });
+        });
+    }
 
     return store;
 };

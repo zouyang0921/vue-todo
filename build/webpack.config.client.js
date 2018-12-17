@@ -26,7 +26,7 @@ const devServer = {
     },
     headers: { 'Access-Control-Allow-Origin': '*'},
     historyApiFallback: {
-        index: '/public/index.html'
+        index: '/public/index.html' // public 和 output 里面的 publicPath 对应，index.html 和 HTMLPlugin 对应
     },
     proxy: {
         '/api': 'http://127.0.0.1:3333',
